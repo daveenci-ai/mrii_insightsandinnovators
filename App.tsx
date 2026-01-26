@@ -1,0 +1,88 @@
+
+import React, { useEffect } from 'react';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import PodcastPlatforms from './components/PodcastPlatforms';
+import FeaturedEpisodes from './components/FeaturedEpisodes';
+import DeepDiveSEO from './components/DeepDiveSEO';
+import KnowledgeVault from './components/KnowledgeVault';
+import CertificationRoadmap from './components/CertificationRoadmap';
+import LeadMagnetForm from './components/LeadMagnetForm';
+import Benefits from './components/Benefits';
+import EpisodeArchive from './components/EpisodeArchive';
+import Footer from './components/Footer';
+
+const App: React.FC = () => {
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+        }
+      });
+    }, observerOptions);
+
+    const animatedElements = document.querySelectorAll('.scroll-trigger');
+    animatedElements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div className="min-h-screen flex flex-col selection:bg-primary/20 selection:text-primary overflow-x-hidden bg-white">
+      <Header />
+      
+      <main className="flex-grow">
+        <Hero />
+        
+        <div className="scroll-trigger opacity-0 transition-opacity duration-700 ease-out [&.animate-in]:opacity-100">
+          <PodcastPlatforms />
+        </div>
+        
+        <div className="scroll-trigger opacity-0 translate-y-10 transition-all duration-1000 ease-out [&.animate-in]:opacity-100 [&.animate-in]:translate-y-0">
+          <FeaturedEpisodes />
+        </div>
+
+        <div className="scroll-trigger opacity-0 translate-y-10 transition-all duration-1000 ease-out [&.animate-in]:opacity-100 [&.animate-in]:translate-y-0">
+          <KnowledgeVault />
+        </div>
+
+        <div className="scroll-trigger opacity-0 translate-y-10 transition-all duration-1000 ease-out [&.animate-in]:opacity-100 [&.animate-in]:translate-y-0">
+          <DeepDiveSEO />
+        </div>
+
+        <div className="scroll-trigger opacity-0 translate-y-10 transition-all duration-1000 ease-out [&.animate-in]:opacity-100 [&.animate-in]:translate-y-0">
+          <CertificationRoadmap />
+        </div>
+
+        <div className="scroll-trigger opacity-0 translate-y-10 transition-all duration-1000 ease-out [&.animate-in]:opacity-100 [&.animate-in]:translate-y-0">
+          <LeadMagnetForm />
+        </div>
+        
+        <div className="scroll-trigger opacity-0 translate-y-10 transition-all duration-1000 ease-out delay-200 [&.animate-in]:opacity-100 [&.animate-in]:translate-y-0">
+          <Benefits />
+        </div>
+        
+        <div className="scroll-trigger opacity-0 translate-y-10 transition-all duration-1000 ease-out [&.animate-in]:opacity-100 [&.animate-in]:translate-y-0">
+          <EpisodeArchive />
+        </div>
+      </main>
+      
+      <Footer />
+
+      <style>{`
+        .scroll-trigger.animate-in {
+          opacity: 1 !important;
+          transform: translateY(0) !important;
+        }
+      `}</style>
+    </div>
+  );
+};
+
+export default App;
