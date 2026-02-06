@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Play, Disc, Mic2, Radio, Music, Sparkles } from 'lucide-react';
+import { Play, Disc, Radio, Music, Sparkles } from 'lucide-react';
 
 const Particles = () => {
   return (
@@ -63,12 +63,12 @@ const Hero: React.FC = () => {
             </div>
             
             <h1 className="text-5xl lg:text-7xl font-black text-gray-900 leading-[0.95] mb-6 tracking-tighter">
-              Deep <span className="text-primary">Insights.</span><br/>
-              Expert <span className="text-gray-400">Voices.</span>
+              Hear <span className="text-primary">Insights</span><br/>
+              <span className="text-gray-400">&</span> <span className="text-primary">Innovators</span>
             </h1>
             
             <p className="text-lg lg:text-xl text-gray-600 mb-8 max-w-xl leading-relaxed font-medium">
-              Join industry pioneers from MRII and UGA as we dissect the future of market research, AI-driven data, and the evolution of consumer behavior.
+              Join industry leaders from MRII as we explore the future of market research, AI-driven practices, and the evolution of consumer behavior.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
@@ -127,18 +127,6 @@ const Hero: React.FC = () => {
                 className="rounded-[2rem] w-full aspect-[4/5] object-cover"
               />
               
-              {/* Floating Badge */}
-              <motion.div 
-                className="absolute -bottom-8 -right-8 bg-white p-6 rounded-3xl shadow-2xl border border-gray-100"
-                animate={{ rotate: [0, 3, -3, 0] }}
-                transition={{ duration: 4, repeat: Infinity }}
-              >
-                <div className="bg-primary/10 p-3 rounded-2xl mb-3 inline-block">
-                  <Mic2 className="text-primary" size={24} />
-                </div>
-                <div className="font-black text-xl text-gray-900 leading-none">UGA Collaborative</div>
-                <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-1">Innovation Partner</div>
-              </motion.div>
             </motion.div>
 
             {/* Background Decorative Disk */}
