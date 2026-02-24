@@ -7,6 +7,7 @@ export interface Episode {
   thumbnail: string;
   duration: string;
   date: string;
+  topic: string;
 }
 
 export interface FooterLink {

@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Play, Disc, Radio, Music, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Particles = () => {
   return (
@@ -72,17 +73,18 @@ const Hero: React.FC = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
-              <motion.button 
+              <motion.button
                 whileHover={{ scale: 1.05, rotate: -1 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => document.getElementById('platforms')?.scrollIntoView({ behavior: 'smooth' })}
                 className="flex items-center justify-center gap-4 bg-primary text-white px-10 py-5 rounded-2xl font-black text-lg transition-all shadow-2xl shadow-primary/40"
               >
                 <Play className="fill-current" size={24} />
                 START LISTENING
               </motion.button>
-              <button className="flex items-center justify-center gap-3 bg-white border-2 border-gray-100 hover:border-primary text-gray-900 px-8 py-5 rounded-2xl font-bold text-lg transition-all">
+              <Link to="/allepisodes" className="flex items-center justify-center gap-3 bg-white border-2 border-gray-100 hover:border-primary text-gray-900 px-8 py-5 rounded-2xl font-bold text-lg transition-all">
                 Browse Archive
-              </button>
+              </Link>
             </div>
             
             <div className="flex items-center gap-8">

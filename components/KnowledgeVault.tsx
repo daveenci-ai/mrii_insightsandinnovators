@@ -2,50 +2,49 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const topics = [
   {
-    title: "AI & Machine Learning",
-    description: "How Large Language Models (LLMs) are automating qualitative coding and synthesis at scale.",
+    title: "AI & The Future of Research",
+    description: "How AI, synthetic data, and digital twins are reshaping the insights toolkit.",
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=400&q=80",
-    stats: "40% faster analysis",
+    stats: "Trending topic",
     span: "lg:col-span-2",
+    filter: "AI",
   },
   {
-    title: "Behavioral Economics",
-    description: "Moving beyond 'stated intent' to 'revealed preference' using cognitive bias mapping.",
+    title: "Strategic Leadership",
+    description: "Moving from data reporting to strategic business partnership and C-Suite influence.",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=400&q=80",
+    stats: "Leadership insights",
+    span: "lg:col-span-1",
+    filter: "Leadership",
+  },
+  {
+    title: "Storytelling & Influence",
+    description: "Soft skills for managing stakeholder resistance and turning data into business decisions.",
     image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=400&q=80",
-    stats: "Higher accuracy",
+    stats: "Persuasion skills",
     span: "lg:col-span-1",
+    filter: "Storytelling",
   },
   {
-    title: "UX Research (UXR)",
-    description: "The intersection of product design and market research in the digital-first economy.",
-    image: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=400&q=80",
-    stats: "User-centric data",
-    span: "lg:col-span-1",
-  },
-  {
-    title: "Agile Methodologies",
-    description: "Reducing research cycles from months to days without sacrificing data integrity.",
-    image: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=400&q=80",
-    stats: "Speed to market",
-    span: "lg:col-span-1",
-  },
-  {
-    title: "Predictive Analytics",
-    description: "Leveraging historical data sets to forecast consumer shifts before they happen.",
+    title: "Methodologies & Innovation",
+    description: "Next-gen technical methods, micro-surveys, and innovative data integration strategies.",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=400&q=80",
-    stats: "Proactive strategy",
+    stats: "Innovation driven",
     span: "lg:col-span-1",
+    filter: "Innovation",
   },
   {
-    title: "Data Ethics & Privacy",
-    description: "Navigating GDPR, CCPA, and the cookieless future of consumer tracking.",
-    image: "https://images.unsplash.com/photo-1504384308090-c54be3855091?auto=format&fit=crop&w=400&q=80",
-    stats: "Compliance first",
-    span: "lg:col-span-2",
-  }
+    title: "Career Development",
+    description: "Lessons on leadership, entrepreneurship, and future-proofing your career in insights.",
+    image: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=400&q=80",
+    stats: "Career growth",
+    span: "lg:col-span-1",
+    filter: "Career",
+  },
 ];
 
 const KnowledgeVault: React.FC = () => {
@@ -63,13 +62,13 @@ const KnowledgeVault: React.FC = () => {
             className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-gray-200 text-primary font-bold text-[10px] uppercase tracking-[0.2em] mb-6 shadow-sm"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-            Educational Resource Hub
+            Top Episode Topics
           </motion.div>
           <h2 className="text-4xl md:text-6xl font-black mb-6 tracking-tighter text-gray-900">
             The Innovation <span className="text-primary italic">Knowledge Vault</span>
           </h2>
           <p className="text-gray-500 text-lg max-w-2xl mx-auto font-medium">
-            Explore the specialized pillars of modern research through our curated expert discussions.
+            Explore expert discussions on the most important market research challenges.
           </p>
         </div>
 
@@ -105,35 +104,32 @@ const KnowledgeVault: React.FC = () => {
                     {topic.stats}
                   </span>
                   
-                  <motion.button 
+                  <Link
+                    to={`/allepisodes?topic=${topic.filter}`}
                     className="flex items-center gap-2 text-xs font-bold text-gray-400 group-hover:text-gray-900 transition-colors"
                   >
                     <span>Related Episodes</span>
-                    <motion.div
-                      initial={{ x: -5, opacity: 0 }}
-                      whileHover={{ x: 0, opacity: 1 }}
-                      className="group-hover:flex"
-                    >
-                      <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                    </motion.div>
-                  </motion.button>
+                    <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                  </Link>
                 </div>
               </div>
             </motion.div>
           ))}
           
           {/* View Full Curriculum Card */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="lg:col-span-1 rounded-[2rem] p-8 border-2 border-dashed border-gray-200 flex flex-col items-center justify-center text-center group cursor-pointer hover:border-primary/30 hover:bg-white transition-all"
-          >
-            <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 mb-4 group-hover:text-primary group-hover:bg-primary/10 transition-colors">
-              <ArrowRight size={24} />
-            </div>
-            <p className="text-xs font-bold text-gray-400 uppercase tracking-widest group-hover:text-primary transition-colors">View Full Curriculum</p>
-          </motion.div>
+          <Link to="/allepisodes">
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="lg:col-span-1 rounded-[2rem] p-8 border-2 border-dashed border-gray-200 flex flex-col items-center justify-center text-center group cursor-pointer hover:border-primary/30 hover:bg-white transition-all h-full"
+            >
+              <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 mb-4 group-hover:text-primary group-hover:bg-primary/10 transition-colors">
+                <ArrowRight size={24} />
+              </div>
+              <p className="text-xs font-bold text-gray-400 uppercase tracking-widest group-hover:text-primary transition-colors">View Full Curriculum</p>
+            </motion.div>
+          </Link>
         </div>
       </div>
     </section>

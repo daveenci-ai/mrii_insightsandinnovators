@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import EpisodeCard from './EpisodeCard';
 import { EPISODES } from '../constants';
 
@@ -38,16 +39,18 @@ const FeaturedEpisodes: React.FC = () => {
               The most impactful conversations from the forefront of global market research.
             </motion.p>
           </div>
-          <motion.button
-            whileHover={{ x: 5 }}
-            className="flex items-center gap-2 text-primary font-bold text-lg hover:underline transition-all"
-          >
-            View All Episodes <ChevronRight size={24} />
-          </motion.button>
+          <Link to="/allepisodes">
+            <motion.span
+              whileHover={{ x: 5 }}
+              className="flex items-center gap-2 text-primary font-bold text-lg hover:underline transition-all"
+            >
+              View All Episodes <ChevronRight size={24} />
+            </motion.span>
+          </Link>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {EPISODES.map((episode, index) => (
+          {EPISODES.slice(0, 6).map((episode, index) => (
             <motion.div
               key={episode.id}
               initial={{ opacity: 0, y: 30 }}

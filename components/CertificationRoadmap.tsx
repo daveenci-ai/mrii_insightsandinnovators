@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { GraduationCap, BookOpen, Star, ArrowRight } from 'lucide-react';
+import { GraduationCap, BookOpen, Star } from 'lucide-react';
 
 const CertificationRoadmap: React.FC = () => {
   return (
@@ -38,11 +38,6 @@ const CertificationRoadmap: React.FC = () => {
                   </div>
                 ))}
               </div>
-
-              <button className="flex items-center gap-3 bg-gray-900 text-white px-10 py-5 rounded-2xl font-black text-lg hover:bg-primary transition-all group">
-                Explore Certification Paths
-                <ArrowRight className="group-hover:translate-x-2 transition-transform" />
-              </button>
             </div>
 
             <div className="relative">
