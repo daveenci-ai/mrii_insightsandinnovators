@@ -18,7 +18,7 @@ const Benefits: React.FC = () => {
     {
       icon: <Rocket size={32} strokeWidth={2.5} />,
       title: "Career Growth",
-      description: "Practical advice and educational resources to help you lead your insights team to new heights.",
+      description: "Practical advice and educational resources to help you grow your team and your career.",
     }
   ];
 

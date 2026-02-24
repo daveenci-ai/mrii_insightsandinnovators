@@ -18,9 +18,10 @@ const Header: React.FC = () => {
           </div>
           
           <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
-            <a href="#" className="text-xs lg:text-sm font-semibold text-gray-600 hover:text-primary transition-colors">Episodes</a>
-            <a href="#" className="text-xs lg:text-sm font-semibold text-gray-600 hover:text-primary transition-colors">Resources</a>
-            <a href="#" className="text-xs lg:text-sm font-semibold text-gray-600 hover:text-primary transition-colors">About</a>
+            <a href="#" className="text-xs lg:text-sm font-semibold text-gray-600 hover:text-primary transition-colors">Learning Resources</a>
+            <a href="#" className="text-xs lg:text-sm font-semibold text-gray-600 hover:text-primary transition-colors">Our News</a>
+            <a href="#" className="text-xs lg:text-sm font-semibold text-gray-600 hover:text-primary transition-colors">Awards</a>
+            <a href="#" className="text-xs lg:text-sm font-semibold text-gray-600 hover:text-primary transition-colors">About Us</a>
             <button className="bg-primary hover:bg-[#d11d2e] text-white px-6 py-2 lg:px-8 lg:py-3 rounded-full font-bold text-xs lg:text-sm transition-all transform hover:scale-105 active:scale-95 shadow-lg shadow-primary/20">
               Subscribe Now
             </button>

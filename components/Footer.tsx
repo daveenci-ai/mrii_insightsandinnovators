@@ -61,7 +61,7 @@ const Footer: React.FC = () => {
             <span className="font-bold text-sm tracking-widest text-gray-500 uppercase">MRII Institute</span>
           </div>
           <div className="text-xs text-gray-500 font-medium">
-            &copy; {new Date().getFullYear()} Market Research Institute International. All rights reserved.
+            Copyright &copy; {new Date().getFullYear()} Market Research Institute International - All Rights Reserved.
           </div>
           <div className="flex gap-6">
             <a href="#" className="text-xs text-gray-500 hover:text-white transition-colors">Privacy Policy</a>

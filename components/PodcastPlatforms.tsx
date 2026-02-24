@@ -14,7 +14,7 @@ const platforms = [
 
 const PodcastPlatforms: React.FC = () => {
   return (
-    <section className="bg-gray-50/80 py-24 border-b border-gray-100 relative overflow-hidden">
+    <section id="platforms" className="bg-gray-50/80 py-24 border-b border-gray-100 relative overflow-hidden">
       {/* Background decoration - subtle moving wave */}
       <motion.div 
         className="absolute top-0 left-0 w-[200%] h-full opacity-[0.03] pointer-events-none"
