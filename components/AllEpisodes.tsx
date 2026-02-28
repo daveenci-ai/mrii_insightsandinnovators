@@ -6,7 +6,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import EpisodeCard from './EpisodeCard';
 import { EPISODES } from '../constants';
 
-const TOPICS = ['All', 'AI', 'Leadership', 'Storytelling', 'Innovation', 'Career'] as const;
+const TOPICS = ['All', 'AI', 'Leadership', 'Innovation', 'Storytelling', 'Career Development'] as const;
 const PER_PAGE_OPTIONS = [10, 50, 100] as const;
 
 const AllEpisodes: React.FC = () => {

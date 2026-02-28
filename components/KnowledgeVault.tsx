@@ -43,7 +43,7 @@ const topics = [
     image: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=400&q=80",
     stats: "Career growth",
     span: "lg:col-span-1",
-    filter: "Career",
+    filter: "Career Development",
   },
 ];
 

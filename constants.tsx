@@ -99,7 +99,7 @@ export const EPISODES: Episode[] = [
     thumbnail: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=600&q=80',
     duration: '36 mins',
     date: 'Jun 22, 2023',
-    topic: 'Career'
+    topic: 'Career Development'
   },
   {
     id: '10',
@@ -149,7 +149,7 @@ export const EPISODES: Episode[] = [
     thumbnail: 'https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=600&q=80',
     duration: '39 mins',
     date: 'Apr 13, 2023',
-    topic: 'Career'
+    topic: 'Career Development'
   },
   {
     id: '15',
