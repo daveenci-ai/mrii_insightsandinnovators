@@ -4,9 +4,11 @@ import { motion } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import EpisodeCard from './EpisodeCard';
-import { EPISODES } from '../constants';
+import { useEpisodes } from '../hooks/useEpisodes';
 
 const FeaturedEpisodes: React.FC = () => {
+  const { episodes, loading, error } = useEpisodes(6);
+
   return (
     <section className="py-24 bg-gray-50/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -48,20 +50,34 @@ const FeaturedEpisodes: React.FC = () => {
             </motion.span>
           </Link>
         </div>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {EPISODES.slice(0, 6).map((episode, index) => (
-            <motion.div
-              key={episode.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <EpisodeCard episode={episode} />
-            </motion.div>
-          ))}
-        </div>
+
+        {loading && (
+          <div className="text-center py-20 text-gray-400 text-lg font-medium">
+            Loading episodes...
+          </div>
+        )}
+
+        {error && (
+          <div className="text-center py-20 text-red-400 text-lg font-medium">
+            Unable to load episodes. Please try again later.
+          </div>
+        )}
+
+        {!loading && !error && (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {episodes.map((episode, index) => (
+              <motion.div
+                key={episode.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <EpisodeCard episode={episode} />
+              </motion.div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

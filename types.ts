@@ -1,13 +1,10 @@
 
 export interface Episode {
-  id: string;
-  number: string;
+  id: number;
   title: string;
-  description: string;
-  thumbnail: string;
-  duration: string;
   date: string;
-  topic: string;
+  link: string;
+  thumbnail: string;
 }
 
 export interface FooterLink {
