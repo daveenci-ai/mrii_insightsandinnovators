@@ -86,9 +86,7 @@ const App: React.FC = () => {
   }, [pathname]);
 
   return (
-    <div className="min-h-screen flex flex-col selection:bg-primary/20 selection:text-primary overflow-x-hidden bg-white">
-      <Header />
-
+    <div className="selection:bg-primary/20 selection:text-primary overflow-x-hidden">
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/allepisodes" element={
@@ -97,8 +95,6 @@ const App: React.FC = () => {
           </main>
         } />
       </Routes>
-
-      <Footer />
     </div>
   );
 };
