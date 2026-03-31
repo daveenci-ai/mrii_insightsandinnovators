@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Play } from 'lucide-react';
 import { Episode } from '../types';
@@ -19,7 +20,7 @@ const EpisodeCard: React.FC<EpisodeCardProps> = ({ episode }) => {
   });
 
   return (
-    <a href={episode.link} target="_blank" rel="noopener noreferrer" className="block">
+    <Link to={`/episode/${episode.slug}`} className="block">
       <motion.div
         className="group relative bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm transition-all hover:shadow-2xl hover:-translate-y-2"
         onMouseEnter={() => setIsHovered(true)}
@@ -29,7 +30,7 @@ const EpisodeCard: React.FC<EpisodeCardProps> = ({ episode }) => {
           <img
             src={episode.thumbnail}
             alt={episode.title}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
@@ -73,7 +74,7 @@ const EpisodeCard: React.FC<EpisodeCardProps> = ({ episode }) => {
           </div>
         </div>
       </motion.div>
-    </a>
+    </Link>
   );
 };
 

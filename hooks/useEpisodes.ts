@@ -6,6 +6,7 @@ const WP_API_URL = 'https://mrii.org/wp-json/wp/v2/podcast';
 interface WPPodcast {
   id: number;
   title: { rendered: string };
+  slug: string;
   date: string;
   link: string;
   _embedded?: {
@@ -23,6 +24,7 @@ function mapWPToEpisode(post: WPPodcast): Episode {
   return {
     id: post.id,
     title: post.title.rendered,
+    slug: post.slug,
     date: post.date,
     link: post.link,
     thumbnail,

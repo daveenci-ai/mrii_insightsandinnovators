@@ -12,6 +12,7 @@ import LeadMagnetForm from './components/LeadMagnetForm';
 import Benefits from './components/Benefits';
 import Footer from './components/Footer';
 import AllEpisodes from './components/AllEpisodes';
+import EpisodePage from './components/EpisodePage';
 
 const LandingPage: React.FC = () => {
   useEffect(() => {
@@ -94,6 +95,11 @@ const App: React.FC = () => {
         <Route path="/allepisodes" element={
           <main className="flex-grow">
             <AllEpisodes />
+          </main>
+        } />
+        <Route path="/episode/:slug" element={
+          <main className="flex-grow">
+            <EpisodePage />
           </main>
         } />
       </Routes>

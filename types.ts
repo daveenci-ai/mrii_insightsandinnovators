@@ -2,6 +2,7 @@
 export interface Episode {
   id: number;
   title: string;
+  slug: string;
   date: string;
   link: string;
   thumbnail: string;
